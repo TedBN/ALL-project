@@ -1,4 +1,3 @@
-# Project-sumo
-This is the github repository for our LRC project.
-Here we will keep our code for Steve.
-Please familiarize yourselves with the way github works before doing anything in the repository.
+# ALL Project
+This is the github repository for our ALL project.
+Here we will keep all our code related to the Pac-man game and our Lego robot, St3ve.
