@@ -10,14 +10,19 @@ arena = Canvas(root,width = 500,height = 500,bg = "white")
 recPlayer = arena.create_rectangle(120,120,100,100)
 recAI = arena.create_rectangle(380,380,400,400)
 
-#With Deyan's code the the arrow keys will be used to move the player rectangle.
-#Here the player functions are defined and binded to the arrow keys.
-vx = 10                                             #These 2 variables determine the distance, which the player rectangle
-vy = 10                                             #will move after an arrow key is pressed.
+#These 2 variables determine the distance, which the rectangles
+#will move after an arrow key is pressed/tick has passed.
+vx = 10
+vy = 10
+
+#These values are used to determine the player's borders.
 x_max = 500                                             
-x_min = 0                                           #These values are used to determine the player's borders.
+x_min = 0
 y_max = 480
 y_min = 0
+
+#With Deyan's code the the arrow keys will be used to move the player rectangle.
+#Here the player functions are defined and binded to the arrow keys.
 def moveUp(event):
     """This function moves the player up"""
     x1,y1,x2,y2 = arena.coords(recPlayer)
@@ -111,7 +116,5 @@ root.mainloop()
 #This loop uses tkinter's after method - it calls a function after a specified
 #amount of time has passed(in this case, it takes half a second to call the AI main function).
 #As you can see, the same line that calls the function is in the function itself, essentially
-#turning lines 7-35 into a while loop.
+#creating a while loop.
 #We tried this with a normal while loop, but it conflicted with the main loop and crashed Python.
-
-#We tried this with a while loop, but it conflicted with the mainloop and crashed Python.
