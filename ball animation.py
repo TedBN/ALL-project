@@ -1,36 +1,44 @@
 #import tkinter module
 from tkinter import *
+#import random module which generates random numbers
 import random
+#create class
 class robot():
-    def_init_(self,x1,y1,x2,y2):
-        self.x1 = x1
-        self.y1 = y1
-        self.x2 = x2
-        self.y2 = y2
+#define and initialise function
+    def __init__(self,a1,b1,a2,b2):
+        self.a1 = a1
+        self.b1 = b1
+        self.a2 = a2
+        self.b2 = b2
+#create class widget
         self.canvas = canvas
-        self.ball = canvas.create_oval(self.x1, self.y1, self.x2, self.y2, fill = "red"
+#create oval shape and add colour
+        self.ball = canvas.create_oval(self.a1, self.b1, self.a2, self.b2, fill = "Blue")
+#define function to move the ovals
     def move_ball(self):
-        d1 = random.randint(0,5)
-        d2 = random.randint(2,3)
-        self.canvas.move(self.ball, d1, d2)
-        self.canvas.after(50, self.move_ball)
-#initialise window and canvas
+#this module implements pseudo-random number generators for various distributions
+        c1 = random.randint(0,9)
+        c2 = random.randint(0,9)
+        self.canvas.move(ALL, c1, c2)
+        self.canvas.after(200, self.move_ball)
+#create window and canvas name
 root = Tk()
-root.title("ball simulator")
+root.title("Ball simulator")
 root.resizable(False,False)
-canvas = canvas(root, width=500, height=500)
+#create canvas size
+canvas = Canvas(root, width = 500, height = 500)
 canvas.pack()
-#animate balls
+#assign the objects coordinates
 robot1 = canvas.create_oval(150,200,200,250)
 robot2 = canvas.create_oval(150,200,200,250)
-x1,y1,x2,y2 = canvas.coords(robot1)
+a1,b1,a2,b2 = canvas.coords(robot1)
 x1,y1,x2,y2 = canvas.coords(robot2)
-co1 = x1
-co2 = y1
-co3 = x2
-co4 = y2
+co1 = a1
+co2 = b1
+co3 = a2
+co4 = b2
 robot1 = robot(co1,co2,co3,co4)
-robot.move_ball()
+robot1.move_ball()
 robot2 = robot(co1,co2,co3,co4)
-robot.move_ball()
-root.mainlood()
+robot2.move_ball()
+root.mainloop()
